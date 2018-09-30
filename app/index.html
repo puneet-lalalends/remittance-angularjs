@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Remmitance</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css">
+    <link rel="stylesheet" href="bower_components/select2/select2.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Latest Bootstrap min CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <!-- ionicons CSS -->
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
+    <!--- owl carousel CSS-->
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/spop.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="stylesheet" href="assets/css/bootstrap-formhelpers.min.css">
+    <!-- Color CSS -->
+    <link id="layoutstyle" rel="stylesheet" href="assets/color/theme.css">
+    <link rel="stylesheet" href="assets/imagenselect/chosen.css">
+    <link rel="stylesheet" href="assets/imagenselect/ImageSelect.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body class="" data-spy="scroll" data-offset="110">
+<!--<ul class="menu">
+  <li><a href="#!/priceComparison">Compair Price</a></li>
+</ul>-->
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div ng-view></div>
+
+<!--<div>Remittance: v<span app-version></span></div>-->
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-ui-select/dist/select.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/select2/select2.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-select2/src/select2.js"></script>
+<script src="bower_components/angular-select2/dist/angular-select2.min.js"></script>
+<script src="app.js"></script>
+<script src="modules/priceComparison/comparison.js"></script>
+<script src="config.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+<script src="assets/js/jquery-1.12.4.min.js"></script>
+<script src="assets/imagenselect/jquery-1.11.0.min.js"></script>
+<script src="assets/imagenselect/chosen.jquery.js"></script>
+<script src="assets/imagenselect/ImageSelect.jquery.js"></script>
+<!-- Latest compiled and minified Bootstrap -->
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="assets/js/bootstrap-formhelpers.min.js"></script>
+<!-- owl-carousel min js  -->
+<script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
+<!-- magnific-popup min js  -->
+<script src="assets/js/magnific-popup.min.js"></script>
+<!-- waypoints min js  -->
+<script src="assets/js/waypoints.min.js"></script>
+<!-- parallax js  -->
+<script src="assets/js/parallax.js"></script>
+<!-- countdown js  -->
+<script src="assets/js/jquery.countdown.min.js"></script>
+<!-- particles min js  -->
+<script src="assets/js/particles.min.js"></script>
+<!-- scripts js -->
+<script src="assets/js/jquery.dd.min.js"></script>
+<!-- jquery.counterup.min js -->
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/spop.min.js"></script>
+<script src="assets/js/notification.js"></script>
+<!-- scripts js -->
+
+<script src="assets/js/scripts.js"></script>
+
+<!-- Latest jQuery -->
+<!--
+  <script type="text/javascript">
+      function updateSymbol(e){
+          var selected = $(".currency-selector option:selected");
+          $(".currency-symbol").text(selected.data("symbol"));
+          $(".currency-amount").prop("placeholder", selected.data("placeholder"));
+          $('.currency-addon-fixed').text(selected.text())
+      }
+
+      $(".currency-selector").on("change", updateSymbol);
+      updateSymbol();
+  </script>-->
+
+</body>
+</html>

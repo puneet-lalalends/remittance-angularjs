@@ -1,0 +1,304 @@
+<!-- START LOADER -->
+<div id="loader-wrapper">
+    <div id="loading-center-absolute">
+        <div class="object" id="object_four"></div>
+        <div class="object" id="object_three"></div>
+        <div class="object" id="object_two"></div>
+        <div class="object" id="object_one"></div>
+    </div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
+<!-- END LOADER -->
+
+<!-- START HEADER -->
+<header class="header_wrap fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand page-scroll animation" href="#home_section" data-animation="fadeInDown"
+               data-animation-delay="1s">
+                <span style="color: #fff">LOGO</span>
+                <!-- <img class="logo_light" src="assets/images/logo.png" alt="logo" />
+                <img class="logo_dark" src="assets/images/logo_dark.png" alt="logo" />  -->
+            </a>
+            <button class="navbar-toggler animation" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation" data-animation="fadeInDown" data-animation-delay="1.1s">
+                <span class="ion-android-menu"></span>
+            </button>
+            <div class="collapse navbar-collapse menu-sty" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="dropdown animation" data-animation="fadeInDown" data-animation-delay="1.1s">
+                        <a data-toggle="dropdown" class="nav-link" href="#">Blog</a>
+
+                    </li>
+                    <li class="animation" data-animation="fadeInDown" data-animation-delay="1.2s"><a
+                            class="nav-link page-scroll nav_item" href="#about">About Us</a></li>
+                    <li class="animation" data-animation="fadeInDown" data-animation-delay="1.3s"><a
+                            class="nav-link page-scroll nav_item" href="#how_it_work">How We Work</a></li>
+                    <li class="animation" data-animation="fadeInDown" data-animation-delay="1.4s"><a
+                            class="nav-link page-scroll nav_item" href="#faq">FAQ</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- END HEADER -->
+
+<!-- START SECTION BANNER -->
+<section id="home_section" class="section_banner section_gradiant small_pb" data-z-index="1" data-parallax="scroll"
+         data-image-src="../../assets/images/dummy_banner.png">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-7 col-lg-6 col-sm-12 order-lg-first">
+                <div class="banner_text text_md_center">
+                    <h1 class="animation" data-animation="fadeInUp" data-animation-delay="1.1s"><span>S</span>END <span>M</span>ONEY
+                    </h1>
+                    <p class="animation" data-animation="fadeInUp" data-animation-delay="1.3s">Remittance across the
+                        globe within minutes</p>
+                    <!--  <h1 class="animation" data-animation="fadeInUp" data-animation-delay="1.1s">The Number of Token Sales Keeps Rising</h1>
+                     <p class="animation" data-animation="fadeInUp" data-animation-delay="1.3s">The mining starts immediately after confirmed payment. First payouts within 24 hours.  </p>
+                     <div class="btn_group animation" data-animation="fadeInUp" data-animation-delay="1.4s">
+                         <a href="#whitepaper" class="btn btn-default page-scroll btn-radius nav-link">Whitepaper <i class="ion-ios-arrow-thin-right"></i></a>
+                         <a href="#" class="btn btn-default btn-radius">Buy Token Now! <i class="ion-ios-arrow-thin-right"></i></a>
+                     </div> -->
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 order-first">
+                <div class="banner_inner res_md_mb_50 res_xs_mb_30">
+                    <div class="tk_countdown box_shadow_none animation" data-animation="fadeIn"
+                         data-animation-delay="1.1s">
+                        <!--<label>Origin</label>-->
+                        <!--<div class="bfh-selectbox bfh-countries" data-country="IN" data-flags="true"></div>-->
+                        <div class="">
+                            <label for="inlineFormInputGroup">Origin</label>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon currency-addon to-add">
+
+                           <!--         <select class="form-control no-padd my-select" ng-model="pageData.srcCountry">
+                                        <option ng-repeat="country in globalData.countryList" data-img-src="../../assets/flags-mini/{{country.countryCode|lowercase}}.png">{{country.countryName}}</option>
+                                        &lt;!&ndash;<option selected="selected" data-img-src="../../assets/flags-mini/ad.png">Tavis Lochhead</option>&ndash;&gt;
+                                    </select>-->
+
+                                    <ui-select ng-model="pageData.srcCountry" class="currency-selector form-control no-padd mdb-select md-form" theme="select2" style="min-width: 300px;" title="Send Money From">
+                                        <ui-select-match placeholder="Send Money From"><img ng-src="../../assets/flags-mini/{{$select.selected.countryCode|lowercase}}.png" />{{$select.selected.countryName}}</ui-select-match>
+                                        <ui-select-choices repeat="country in globalData.countryList | propsFilter: {countryName: $select.search, countryCode: $select.search}">
+                                            <img ng-src="../../assets/flags-mini/{{country.countryCode|lowercase}}.png" /><div ng-bind-html="country.countryName | highlight: $select.search"></div>
+                                        </ui-select-choices>
+                                    </ui-select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--<label>Destination</label>-->
+                        <!--<div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true"></div>-->
+                        <div class="">
+                            <label for="inlineFormInputGroup">Destination</label>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon currency-addon to-add">
+
+                                    <ui-select ng-model="pageData.desCountry" class="currency-selector form-control no-padd" theme="select2" style="min-width: 300px;" title="Send Money To">
+                                        <ui-select-match placeholder="Send Money To"><img ng-src="../../assets/flags-mini/{{$select.selected.countryCode|lowercase}}.png" />{{$select.selected.countryName}}</ui-select-match>
+                                        <ui-select-choices repeat="country in globalData.countryList | propsFilter: {countryName: $select.search, countryCode: $select.search}">
+                                            <img ng-src="../../assets/flags-mini/{{country.countryCode|lowercase}}.png" /><div ng-bind-html="country.countryName | highlight: $select.search"></div>
+                                        </ui-select-choices>
+                                    </ui-select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                                <label for="inlineFormInputGroup">How Much?</label>
+                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                    <input type="text" class="form-control currency-amount" id="inlineFormInputGroup" ng-model="pageData.amountSend"  size="8">
+                                    <div class="input-group-addon currency-addon">
+                                        <input type="text" class="form-control currency-amount" size="2" ng-model="pageData.srcCurrency" ng-value="pageData.srcCountry.countryCurrency" ng-disabled="true">
+                                    </div>
+                                </div>
+
+                        </div>
+                        <div class="">
+                                <label for="inlineFormInputGroup">To</label>
+                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                    <div class="input-group-addon currency-addon to-add">
+                                        <input type="text" class="form-control currency-amount" size="10" ng-model="pageData.destCurrency" ng-value="pageData.desCountry.countryCurrency" ng-disabled="true">
+                                    </div>
+                                </div>
+                        </div>
+
+                        <a href="#" class="btn btn-info box_shadow btn-block mt-4 animation animated fadeInUp"
+                           data-animation="fadeInUp" data-animation-delay="0.6s"
+                           style="animation-delay: 0.6s; opacity: 1;" ng-click="comparePrice()">Compare</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="divider large_divider"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- END SECTION BANNER -->
+
+<!-- START SECTION WHY CHOOSE US -->
+<section class="small_pt" id="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
+                <div class="title_default_dark title_border text-center">
+                    <h4 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">Why Choose Us?</h4>
+                    <p class="animation" data-animation="fadeInUp" data-animation-delay="0.4s">Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Perspiciatis unde omnis iste natus error sit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="box_wrap radius_box bg-white text-center animation" data-animation="fadeInUp"
+                     data-animation-delay="0.6s">
+                    <img src="assets/images/wc_icon1.png" alt="wc_icon1"/>
+                    <h4>Fully Secured Data</h4>
+                    <p>Cryptocash bitcoin ensures every block and transaction it accepts is a valid, increasing not only
+                        your security but also helping prevent miners and banks from taking control of Bitcoin.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="box_wrap radius_box bg-white text-center animation" data-animation="fadeInUp"
+                     data-animation-delay="0.8s">
+                    <img src="assets/images/wc_icon2.png" alt="wc_icon2"/>
+                    <h4>A Better User Interface</h4>
+                    <p>Bitcoin wallet has features most other wallets don't have. But if you don't need them, you can
+                        use several other wallets on top of Bitcoin without losing Bitcoin Core's security and privacy
+                        benefits.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-3 col-sm-12">
+                <div class="box_wrap radius_box bg-white text-center animation" data-animation="fadeInUp"
+                     data-animation-delay="1s">
+                    <img src="assets/images/wc_icon3.png" alt="wc_icon3"/>
+                    <h4>Support The Network</h4>
+                    <p>Bitcoin helps support other peers.This isn't as useful as helping to keep Bitcoin decentralized,
+                        but it's an easy way for broadband users to contribute to less well-connected users.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION WHY CHOOSE US -->
+
+
+<!-- START SECTION BANNER -->
+<section id="tips_section" class="small_pb" data-z-index="1" data-parallax="scroll"
+         data-image-src="assets/images/footer-bg.png">
+    <div class="container-fluid">
+        <div class="row txt-btm">
+            <div class="col-xl-6 col-lg-6 col-sm-12 order-lg-first tips-sec">
+                <h2>Tips To <br/>
+                    transfer <br/>
+                    Safely</h2>
+                <p>Lorem ipsum dolor sit amet, con sectetur<br/> adipiscing elit, sed do </p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 order-first" style="padding-right: 0px;">
+                <img src="assets/images/tips-img.png">
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- END SECTION BANNER -->
+
+
+<!-- START FOOTER SECTION -->
+<footer>
+    <div class="top_footer bg_grey_dark" data-z-index="1" data-parallax="scroll">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer_title border_title animation" data-animation="fadeInUp"
+                         data-animation-delay="0.2s">
+                        About Us
+                    </div>
+                    <div class="footer_desc">
+                        <p class="animation" data-animation="fadeInUp" data-animation-delay="0.4s">Lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 res_md_mt_30 res_sm_mt_20">
+                    <h4 class="footer_title border_title animation" data-animation="fadeInUp"
+                        data-animation-delay="0.2s">Contact Us</h4>
+                    <ul class="list_none contact_info mt-margin">
+                        <li class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s"
+                            style="animation-delay: 0.4s; opacity: 1;">
+                            <i class="ion-ios-location"></i>
+                            <div class="contact_detail"><span>Address</span>
+                                <p># 1234, abck place
+                                    Lorem Ipsum, majitol
+                                    100212</p>
+                            </div>
+                        </li>
+                        <li class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.6s"
+                            style="animation-delay: 0.6s; opacity: 1;">
+                            <i class="ion-ios-email"></i>
+                            <div class="contact_detail"><span>Email-id</span>
+                                <p>remittencebazar.com</p>
+                            </div>
+                        </li>
+                        <li class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.5s"
+                            style="animation-delay: 0.5s; opacity: 1;">
+                            <i class="ion-android-call"></i>
+                            <div class="contact_detail"><span>Phone</span>
+                                <p>+91 2345678912</p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 res_md_mt_30 res_sm_mt_20">
+                    <div class="newsletter_form">
+                        <h4 class="footer_title border_title animation" data-animation="fadeInUp"
+                            data-animation-delay="0.2s">Find Us On</h4>
+                        <ul class="list_none social_icon">
+                            <li class="animation animated fadeInUp" data-animation="fadeInUp"
+                                data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;"><a href="#"><i
+                                    class=" fa fa-facebook"></i></a></li>
+                            <li class="animation animated fadeInUp" data-animation="fadeInUp"
+                                data-animation-delay="0.5s" style="animation-delay: 0.5s; opacity: 1;"><a href="#"><i
+                                    class=" fa fa-twitter"></i></a></li>
+                            <li class="animation animated fadeInUp" data-animation="fadeInUp"
+                                data-animation-delay="0.8s" style="animation-delay: 0.8s; opacity: 1;"><a href="#"><i
+                                    class=" fa fa-linkedin"></i></a></li>
+                        </ul>
+
+                        <!-- <form class="subscribe_form animation" data-animation="fadeInUp" data-animation-delay="0.4s">
+                            <input class="input-rounded" type="text" required placeholder="Enter Email Address"/>
+                          <button type="submit" title="Subscribe" class="btn-info" name="submit" value="Submit"> Subscribe </button>
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="copyright">&copy; Copyright 2018-2019 remittencebazar.com</p>
+                </div>
+                <!-- <div class="col-md-6">
+                  <ul class="list_none footer_menu">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                  </ul>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER SECTION -->

@@ -1,0 +1,385 @@
+
+<!-- START LOADER -->
+<div id="loader-wrapper">
+    <div id="loading-center-absolute">
+        <div class="object" id="object_four"></div>
+        <div class="object" id="object_three"></div>
+        <div class="object" id="object_two"></div>
+        <div class="object" id="object_one"></div>
+    </div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
+<!-- END LOADER -->
+
+<!-- START HEADER -->
+<header class="header_wrap fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand page-scroll animation" href="#home_section" data-animation="fadeInDown" data-animation-delay="1s">
+                <span style="color: #fff">LOGO</span>
+                <!-- <img class="logo_light" src="assets/images/logo.png" alt="logo" />
+                <img class="logo_dark" src="assets/images/logo_dark.png" alt="logo" />  -->
+            </a>
+            <button class="navbar-toggler animation" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-animation="fadeInDown" data-animation-delay="1.1s">
+                <span class="ion-android-menu"></span>
+            </button>
+            <div class="collapse navbar-collapse menu-sty" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="dropdown animation" data-animation="fadeInDown" data-animation-delay="1.1s">
+                        <a data-toggle="dropdown" class="nav-link" href="#">Blog</a>
+
+                    </li>
+                    <li class="animation" data-animation="fadeInDown" data-animation-delay="1.2s"><a class="nav-link page-scroll nav_item" href="#about">About Us</a></li>
+                    <li class="animation" data-animation="fadeInDown" data-animation-delay="1.3s"><a class="nav-link page-scroll nav_item" href="#how_it_work">How We Work</a></li>
+                    <li class="animation" data-animation="fadeInDown" data-animation-delay="1.4s"><a class="nav-link page-scroll nav_item" href="#faq">FAQ</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- END HEADER -->
+
+<!-- START SECTION BANNER -->
+<section id="home_section" class="i-section_banner" data-z-index="1" data-parallax="scroll" data-image-src="assets/images/inner-banner.png">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-12 col-lg-12 col-sm-12 order-lg-first text-center">
+                <div class="inner_bantext text_md_center">
+                    <h1 class="animation" data-animation="fadeInUp" data-animation-delay="1.1s">Best Money Transfer Solutions</h1>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- END SECTION BANNER -->
+
+<section id="breadcrump_sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 bread-left">
+                <h2>{{showPricepageData.srcCountry.countryName}}</h2>
+                <p>{{showPricepageData.srcCountry.countryCurrency}}</p>
+            </div>
+            <div class="col-lg-5 bread-right">
+                <h2>{{showPricepageData.desCountry.countryName}}</h2>
+                <p>{{showPricepageData.desCountry.countryCurrency}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="currency-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <!--<label>Send Money From</label>-->
+                <!--<div class="bfh-selectbox bfh-countries" data-country="IN" data-flags="true"></div>-->
+                <div class="">
+                        <label for="inlineFormInputGroup">Send Money From</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!--<input type="text" class="form-control currency-amount" id="inlineFormInputGroup" placeholder="0.00" size="8">-->
+                            <div class="input-group-addon currency-addon">
+
+                                <ui-select ng-model="showPricepageData.srcCountry" class="currency-selector form-control no-padd mdb-select md-form" theme="select2" style="min-width: 300px;" title="Send Money From">
+                                    <ui-select-match placeholder="Send Money From"><img ng-src="../../assets/flags-mini/{{$select.selected.countryCode|lowercase}}.png" />{{$select.selected.countryName}}</ui-select-match>
+                                    <ui-select-choices repeat="country in globalData.countryList | propsFilter: {countryName: $select.search, countryCode: $select.search}">
+                                        <img ng-src="../../assets/flags-mini/{{country.countryCode|lowercase}}.png" /><div ng-bind-html="country.countryName | highlight: $select.search"></div>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3">
+                <!--<label>Send Money To</label>-->
+                <!--<div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true"></div>-->
+                <div class="">
+                    <label for="inlineFormInputGroup">Send Money To</label>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <!--<input type="text" class="form-control currency-amount" id="inlineFormInputGroup" placeholder="0.00" size="8">-->
+                        <div class="input-group-addon currency-addon">
+
+                            <ui-select ng-model="showPricepageData.desCountry" class="currency-selector form-control no-padd mdb-select md-form" theme="select2" style="min-width: 300px;" title="Send Money From">
+                                <ui-select-match placeholder="Send Money From"><img ng-src="../../assets/flags-mini/{{$select.selected.countryCode|lowercase}}.png" />{{$select.selected.countryName}}</ui-select-match>
+                                <ui-select-choices repeat="country in globalData.countryList | propsFilter: {countryName: $select.search, countryCode: $select.search}">
+                                    <img ng-src="../../assets/flags-mini/{{country.countryCode|lowercase}}.png" /><div ng-bind-html="country.countryName | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3">
+                <div class="">
+                    <form>
+                        <label for="inlineFormInputGroup">How Much?</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <input type="text" class="form-control currency-amount" id="inlineFormInputGroup" placeholder="0.00" size="8" ng-model="showPricepageData.amountSend">
+                            <div class="input-group-addon currency-addon">
+                                <input type="text" class="form-control currency-amount" size="2" ng-model="showPricepageData.srcCurrency" ng-value="showPricepageData.srcCountry.countryCurrency" ng-disabled="true">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <div class="">
+                    <form>
+                        <label for="inlineFormInputGroup">To</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon currency-addon to-add">
+                                <input type="text" class="form-control currency-amount" size="10" ng-model="pageData.destCurrency" ng-value="showPricepageData.desCountry.countryCurrency" ng-disabled="true">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <button type="type" class="btn btn-lg btn-primary-soft" ng-click="comparePriceFromPriceList()">Compare</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-green">We could only find {{showPricepageData.providerList.length}} different providers to compare for your {{showPricepageData.amountSend}} {{showPricepageData.srcCountry.countryCurrency}}-{{showPricepageData.desCountry.countryCurrency}} transfer. You can try comparing for other amounts or currencies to get more results.</div>
+        </div>
+    </div>
+</div>
+
+<div class="container transfer-acc">
+    <div class="row">
+        <div class="col-md-7 text-left">
+            <h3>Transfer To Bank Account</h3>
+            <p>The {{showPricepageData.providerList.length}} best options to transfer {{showPricepageData.srcCountry.countryCurrency}} to a bank account in {{showPricepageData.desCountry.countryName}}</p>
+        </div>
+        <div class="col-md-5 text-right">
+            <h2>1 {{showPricepageData.srcCountry.countryCurrency}} = {{showPricepageData.currentPrice}} {{showPricepageData.desCountry.countryCurrency}}</h2>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 10px" ng-repeat="provider in showPricepageData.providerList">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="outer-box">
+                <div class="row">
+                    <div class="col-md-6 pad-tb">
+                        <div class="img-trans">
+                            <img ng-src="{{'../../assets/partnersImages/'+provider.partnerName+'.png'}}">
+                        </div>
+                        <div class="con-trans" ng-click="provider.showDetails=!provider.showDetails">
+                            <h5>TOTAL COST</h5>
+                            <h4>{{provider.transferFees}} {{showPricepageData.srcCountry.countryCurrency}}</h4>
+                            <p class="tbor">Exchange Rate: <span>{{provider.exchangeRate}} <!--(+0.01%)--> </span></p>
+                            <p>Fees: <span>{{provider.transferFees}} {{showPricepageData.srcCountry.countryCurrency}}</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 tans-table">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th><i class="fa fa-info-circle"></i></th>
+                                <th>PAYMENT OPTIONS</th>
+                                <th>SPEED</th>
+                            </tr>
+                            <tr ng-repeat="paymentMode in provider.paymentMode">
+                                <td></td>
+                                <td class="bor">{{paymentMode.paymentType}}</td>
+                                <td class="bor">{{paymentMode.estimatedDelivery|getDays}} Days</td>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="btn-block btn-go">GO TO <br />{{provider.partnerName|uppercase}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="provider.showDetails">
+        <div class="col-md-12">
+            <div class="detail-dv">
+                <div class="row bor-btm">
+                    <div class="col-md-12">
+                        <div class="row roadmap_list small_space align-items-end">
+                            <div class="col-lg">
+                                <div class="single_roadmap roadmap_done">
+                                    <div class="roadmap_icon"></div>
+                                    <h6 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">What you pay</h6>
+                                    <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.3s" style="animation-delay: 0.3s; opacity: 1;">{{showPricepageData.amountSend}} {{showPricepageData.srcCountry.countryCurrency}}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="single_roadmap roadmap_done">
+                                    <div class="roadmap_icon"></div>
+                                    <h6 class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">Bank fees</h6>
+
+                                    <p class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">- 0 USD</p>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="single_roadmap roadmap_done">
+                                    <div class="roadmap_icon"></div>
+                                    <h6 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">Tranfer fees</h6>
+                                    <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">- {{provider.transferFees}} {{showPricepageData.srcCountry.countryCurrency}}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="single_roadmap roadmap_done">
+                                    <div class="roadmap_icon"></div>
+                                    <h6 class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">What is sent</h6>
+                                    <p class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">{{showPricepageData.amountSend|whatIsSent:provider.transferFees}} {{showPricepageData.srcCountry.countryCurrency}}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="single_roadmap roadmap_done">
+                                    <div class="roadmap_icon"></div>
+                                    <h6 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">Exchange rate</h6>
+                                    <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">{{provider.exchangeRate}} <!--(+0.01%)--></p>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="single_roadmap roadmap_done">
+                                    <div class="roadmap_icon"></div>
+                                    <h6 class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">Amount Received</h6>
+                                    <p class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">{{provider.amountReceived}} {{showPricepageData.desCountry.countryCurrency}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row list-ul">
+                    <div class="col-md-6">
+                        <ul>
+                            <li><img src="../../assets/images/icon-1.png">{{provider.partnerInfoBo.licensedBy}}</li>
+                            <li><img src="../../assets/images/icon-2.png">{{provider.partnerInfoBo.basedIn}}</li>
+                            <li><img src="../../assets/images/icon-3.png">Available In
+                                <span ng-repeat="availableIn in provider.partnerInfoBo.availableIn.split(',')">
+                                  <img ng-src="../../assets/flags-mini/{{availableIn|lowercase}}.png" />
+                                </span>
+                                </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <!--<li><img src="../../assets/images/icon-4.png">  Time to open an account A few minutes</li>-->
+                            <li><img src="../../assets/images/icon-5.png"><span ng-bind-html="provider.partnerInfoBo.dealIn"></span></li>
+                        </ul>
+                        <a href="#" class="">Review and Guide</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center txt">
+                        <p ng-bind-html="provider.partnerInfoBo.briefAbout"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br />
+</div>
+
+<!-- START SECTION WHY CHOOSE US -->
+<section class="small_pt" id="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
+                <div class="title_default_dark title_border text-center">
+                    <h4 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">Our guides to save on money transfers</h4>
+                    <p class="animation" data-animation="fadeInUp" data-animation-delay="0.4s">Lorem ipsum dolor sit amet, con sectetur adipiscing elit, sed do eiusmod Lorem ipsum dolor sitamet, con sectetur adipiscing elit, sed do eiusmod </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION WHY CHOOSE US -->
+
+
+<!-- START FOOTER SECTION -->
+<footer>
+    <div class="top_footer bg_grey_dark" data-z-index="1" data-parallax="scroll">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer_title border_title animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                        About Us
+                    </div>
+                    <div class="footer_desc">
+                        <p class="animation" data-animation="fadeInUp" data-animation-delay="0.4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 res_md_mt_30 res_sm_mt_20">
+                    <h4 class="footer_title border_title animation" data-animation="fadeInUp" data-animation-delay="0.2s">Contact Us</h4>
+                    <ul class="list_none contact_info mt-margin">
+                        <li class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                            <i class="ion-ios-location"></i>
+                            <div class="contact_detail"> <span>Address</span>
+                                <p># 1234, abck place
+                                    Lorem Ipsum, majitol
+                                    100212</p>
+                            </div>
+                        </li>
+                        <li class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.6s" style="animation-delay: 0.6s; opacity: 1;">
+                            <i class="ion-ios-email"></i>
+                            <div class="contact_detail"> <span>Email-id</span>
+                                <p>remittencebazar.com</p>
+                            </div>
+                        </li>
+                        <li class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.5s" style="animation-delay: 0.5s; opacity: 1;">
+                            <i class="ion-android-call"></i>
+                            <div class="contact_detail"> <span>Phone</span>
+                                <p>+91 2345678912</p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 res_md_mt_30 res_sm_mt_20">
+                    <div class="newsletter_form">
+                        <h4 class="footer_title border_title animation" data-animation="fadeInUp" data-animation-delay="0.2s">Find Us On</h4>
+                        <ul class="list_none social_icon">
+                            <li class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;"><a href="#"><i class=" fa fa-facebook"></i></a></li>
+                            <li class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.5s" style="animation-delay: 0.5s; opacity: 1;"><a href="#"><i class=" fa fa-twitter"></i></a></li>
+                            <li class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.8s" style="animation-delay: 0.8s; opacity: 1;"><a href="#"><i class=" fa fa-linkedin"></i></a></li>
+                        </ul>
+
+                        <!-- <form class="subscribe_form animation" data-animation="fadeInUp" data-animation-delay="0.4s">
+                            <input class="input-rounded" type="text" required placeholder="Enter Email Address"/>
+                          <button type="submit" title="Subscribe" class="btn-info" name="submit" value="Submit"> Subscribe </button>
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="copyright">&copy; Copyright 2018-2019  remittencebazar.com</p>
+                </div>
+                <!-- <div class="col-md-6">
+                  <ul class="list_none footer_menu">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                  </ul>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER SECTION -->
+
+<a href="#" class="scrollup btn-default"><i class="ion-ios-arrow-up"></i></a> 
