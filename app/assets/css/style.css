@@ -6721,6 +6721,14 @@ button.btn-white:hover {
 	background-size: cover;
 }
 
+.tips_section{
+	background-image: url(../images/footer-bg.png);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .priceSection{
 	background-image: url(../images/inner-banner.png);
 	background-attachment: fixed;
