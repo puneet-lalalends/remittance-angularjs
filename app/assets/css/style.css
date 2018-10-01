@@ -1450,7 +1450,7 @@ font-weight: 500;}
     z-index: 1000;  
 }
 #currency-sec .currency-selector {
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
   width: 100%;
@@ -6711,6 +6711,55 @@ button.btn-white:hover {
     display: inline-block;
     height: 20px;
     width: 20px;
+}
+
+.homeSection{
+	background-image: url(../images/dummy_banner.png);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.priceSection{
+	background-image: url(../images/inner-banner.png);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.originInput{
+	padding: 0;
+	min-width: 100% !important;
+	padding-left: 0 !important;
+}
+
+.select2-search input{
+	width: 100% !important;
+}
+
+.originInput>.select2-choice{
+	height: 42px;
+}
+
+.originInput>.select2-choice .select2-chosen{
+	padding: 7px;
+}
+
+.originInput>.select2-choice .select2-chosen>img,
+.select2-result-label.ui-select-choices-row-inner>img{
+	height: 16px;
+	margin-right: 6px;
+	margin-bottom: 3px;
+	display: inline-block;
+}
+.select2-result-label.ui-select-choices-row-inner>div{
+	display: inline-block;
+}
+
+.select2-arrow.ui-select-toggle{
+	padding: 8px 0;
 }
 /*===================================*
 26. END TOKEN NOTIFICATION POPUP

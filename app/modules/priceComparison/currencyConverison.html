@@ -48,8 +48,7 @@
 <!-- END HEADER -->
 
 <!-- START SECTION BANNER -->
-<section id="home_section" class="section_banner section_gradiant small_pb" data-z-index="1" data-parallax="scroll"
-         data-image-src="../../assets/images/dummy_banner.png">
+<section id="home_section" class="section_banner section_gradiant small_pb homeSection" data-z-index="1" data-parallax="scroll">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-xl-7 col-lg-6 col-sm-12 order-lg-first">
@@ -75,21 +74,21 @@
                         <div class="">
                             <label for="inlineFormInputGroup">Origin</label>
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                <div class="input-group-addon currency-addon to-add">
+                                <!--<div class="input-group-addon currency-addon to-add">-->
 
                            <!--         <select class="form-control no-padd my-select" ng-model="pageData.srcCountry">
                                         <option ng-repeat="country in globalData.countryList" data-img-src="../../assets/flags-mini/{{country.countryCode|lowercase}}.png">{{country.countryName}}</option>
                                         &lt;!&ndash;<option selected="selected" data-img-src="../../assets/flags-mini/ad.png">Tavis Lochhead</option>&ndash;&gt;
                                     </select>-->
 
-                                    <ui-select ng-model="pageData.srcCountry" class="currency-selector form-control no-padd mdb-select md-form" theme="select2" style="min-width: 300px;" title="Send Money From">
+                                    <ui-select ng-model="pageData.srcCountry" class="originInput currency-selector form-control no-padd mdb-select md-form" theme="select2" style="min-width: 300px;" title="Send Money From">
                                         <ui-select-match placeholder="Send Money From"><img ng-src="../../assets/flags-mini/{{$select.selected.countryCode|lowercase}}.png" />{{$select.selected.countryName}}</ui-select-match>
                                         <ui-select-choices repeat="country in globalData.countryList | propsFilter: {countryName: $select.search, countryCode: $select.search}">
                                             <img ng-src="../../assets/flags-mini/{{country.countryCode|lowercase}}.png" /><div ng-bind-html="country.countryName | highlight: $select.search"></div>
                                         </ui-select-choices>
                                     </ui-select>
 
-                                </div>
+                                <!--</div>-->
                             </div>
                         </div>
                         <!--<label>Destination</label>-->
@@ -97,16 +96,16 @@
                         <div class="">
                             <label for="inlineFormInputGroup">Destination</label>
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                <div class="input-group-addon currency-addon to-add">
+                                <!--<div class="input-group-addon currency-addon to-add">-->
 
-                                    <ui-select ng-model="pageData.desCountry" class="currency-selector form-control no-padd" theme="select2" style="min-width: 300px;" title="Send Money To">
+                                    <ui-select ng-model="pageData.desCountry" class="originInput currency-selector form-control no-padd" theme="select2" style="min-width: 300px;" title="Send Money To">
                                         <ui-select-match placeholder="Send Money To"><img ng-src="../../assets/flags-mini/{{$select.selected.countryCode|lowercase}}.png" />{{$select.selected.countryName}}</ui-select-match>
                                         <ui-select-choices repeat="country in globalData.countryList | propsFilter: {countryName: $select.search, countryCode: $select.search}">
                                             <img ng-src="../../assets/flags-mini/{{country.countryCode|lowercase}}.png" /><div ng-bind-html="country.countryName | highlight: $select.search"></div>
                                         </ui-select-choices>
                                     </ui-select>
 
-                                </div>
+                                <!--</div>-->
                             </div>
                         </div>
                         <div class="">
