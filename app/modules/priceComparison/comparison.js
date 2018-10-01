@@ -12,6 +12,25 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
             controller: 'ShowPriceCtrl'
         });
 
+        $routeProvider.when('/privacy', {
+            templateUrl: 'modules/priceComparison/privacyPolicy.html',
+            controller: 'ShowPriceCtrl'
+        });
+
+        $routeProvider.when('/terms', {
+            templateUrl: 'modules/priceComparison/terms.html',
+            controller: 'ShowPriceCtrl'
+        });
+
+        $routeProvider.when('/faq', {
+            templateUrl: 'modules/priceComparison/faq.html',
+            controller: 'ShowPriceCtrl'
+        });
+
+        $routeProvider.when('/howItworks', {
+            templateUrl: 'modules/priceComparison/howItworks.html',
+            controller: 'ShowPriceCtrl'
+        });
     }])
 
     .controller('PriceComparisonCtrl', ['GENERAL_CONFIG', 'PriceComparisonService', '$scope', '$location', '$routeParams', function (GENERAL_CONFIG, PriceComparisonService, $scope, $location, $routeParams) {

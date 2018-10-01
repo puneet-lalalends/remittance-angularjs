@@ -2015,6 +2015,9 @@ text-align: center;padding: 70px 0px;}
 .radius_box {
 	border-radius: 5px;
 }
+.box-height {
+	height: 22em;
+}
 .box_wrap h4,
 .work_inner h4 {
 	color: #8d9292;
@@ -5338,8 +5341,22 @@ color: #ffffff;
 .tips-sec p
 {
 	color:#fff;font-size: 20px;font-weight: 400;
-	font-family: 'Ubuntu', sans-serif; padding-bottom: 5em;
-}  
+	font-family: 'Ubuntu', sans-serif;
+	/*padding-bottom: 5em;*/
+	padding-bottom: 1em;
+	margin-bottom: 0;
+}
+.tips-sec ul {
+	margin: 0;
+	padding: 0 0 3em 1em;
+}
+.tips-sec ul li {
+	list-style-type: disc;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+}
 /*===================================*
 16. END TIPS SECTION
 *===================================*/
@@ -5475,10 +5492,21 @@ button.btn-white:hover {
 	border-top: 1px solid #fff;
 	padding: 20px 0;
 }
+.footer-abt p{
+	font-size: 12px;
+	margin-bottom: 0;
+}
 .copyright {
 	color: #ffffff;
 	font-size: 14px;
 	margin: 0;
+}
+.privacy-link{
+	padding: 2em 0 0 0;
+}
+.privacy-link ul li a{
+	color: #fff;
+	font-size: 12px;
 }
 .footer_menu {
 	text-align: right;
@@ -6793,6 +6821,98 @@ button.btn-white:hover {
 	display: none;
 }
 .faCircleIcon{
+	display: block;
+}
+
+.inner-page p{font-size: 13px;margin-bottom: 8px;}
+.inner-page h2{font-size: 20px;}
+.inner-page h3{font-size: 18px;}
+.inner-page ul li{font-size: 13px;
+	margin-left: 2em;}
+
+.tabBox {
+	box-shadow: 0px 0px 22px -20px;
+	/*width: 320px;*/
+	width: 85%;
+	/*margin: 40px 0 0 40px;*/
+	margin: 0 auto;
+	margin-top: 12%;
+	margin-bottom: 8%;
+	border: 1px solid #f9f9f9;
+}
+
+.hideSeekTab {
+	cursor: pointer;
+	border-bottom: 1px solid #eee;
+	/*width: 320px;*/
+	width: 95%;
+	background-color: white;
+	text-align: center;
+	margin-left: 2%;
+}
+
+.labelBox {
+	position: relative;
+	display: flex;
+	padding: 0 8px 0 16px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.iconBox {
+	position: relative;
+	width: 32px;
+	height: 30px;
+	transform: rotate(-45deg);
+	transition: transform .4s;
+}
+
+.faq-line {
+	margin: auto;
+	display: block;
+	width: 14px;
+	height: 2px;
+	background: grey;
+	position: absolute;
+	top: 16px;
+}
+
+.left {
+	left: 9px;
+	transform: rotate(45deg);
+}
+
+.right {
+	right: 9px;
+	transform: rotate(-45deg);
+}
+
+.iconBox.closed {
+	transform: rotate(0deg);
+}
+
+h3.title {
+	text-align: left;
+	color: grey;
+	font-weight: 200;
+	font-size: 18px;
+}
+
+p.text {
+	font-size: 14px;
+	font-weight: 200;
+	color: #777;
+	background: #eee;
+	display: none;
+	padding: 2rem;
+	text-align: left;
+	line-height: 1.5;
+	opacity: 0;
+	transition: opacity .7s;
+}
+
+p.text.open {
+	opacity: 1;
 	display: block;
 }
 

@@ -47,6 +47,10 @@
 	font-size: 16px;
 	padding: 0 3px;
 }
+.box-height {
+	height: 25em;
+}
+}
 }
 /* -------------------------------------------------
   min-width: 991px and max-width: 1199px
@@ -59,6 +63,7 @@
     float: none;
     width: 100%;
 }
+
 }
 /* -------------------------------------------------
   max-width: 1600px
@@ -725,6 +730,9 @@ header.nav-fixed {
 }
 .banner_partner_logo {
     padding: 10px;
+}
+.box-height {
+	height: 23em;
 }
 }
 /* -------------------------------------------------
@@ -1690,5 +1698,8 @@ section.small_pb {
 }
 .document_dropdown #doc_select_msdd {
     width: 100% !important;
+}
+.box-height {
+	height: 25em;
 }
 }

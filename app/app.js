@@ -15,6 +15,27 @@ angular.module('myApp', [
 
     angular.element(document).ready(function () {
         $(".my-select").chosen();
+
+        $(function() {
+            // when a tab is clicked
+            $('.hideSeekTab').on('click', function() {
+                // if the one you clicked is open,
+                if ($(this).find('p').hasClass('open')) {
+                    // then close it.
+                    $('.hideSeekTab .open').slideToggle().removeClass('open');
+                    $('.iconBox').removeClass('closed');
+                    // otherwise,
+                } else {
+                    // close all tabs,
+                    $('.hideSeekTab .open').slideToggle().removeClass('open');
+                    // and open the one you clicked
+                    $(this).find('p').slideToggle().addClass('open');
+                    $('.iconBox').removeClass('closed');
+                    $(this).find('.iconBox').addClass('closed');
+                }
+            });
+        });
+
     });
 
     $routeProvider.otherwise({redirectTo: '/priceComparison'});
