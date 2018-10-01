@@ -6761,6 +6761,34 @@ button.btn-white:hover {
 .select2-arrow.ui-select-toggle{
 	padding: 8px 0;
 }
+
+.transRight{
+	cursor: pointer;
+}
+
+.faCircle{
+	position: absolute;
+	top: 12px;
+	right: 0;
+}
+
+.faCircle1{
+	position: absolute;
+	font-size: 12px;
+	background: #fff;
+	line-height: 1.6;
+	top: 10px;
+	right: 0;
+}
+
+.faCircleText{
+	display: none;
+}
+.faCircleIcon{
+	display: block;
+}
+
+
 /*===================================*
 26. END TOKEN NOTIFICATION POPUP
 *====================================*/
