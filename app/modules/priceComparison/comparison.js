@@ -23,8 +23,8 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
 
         $scope.comparePrice = function () {
 
-            $scope.pageData.srcCurrency = $scope.pageData.countryCurrency;
-            $scope.pageData.destCurrency = $scope.pageData.countryCurrency;
+            $scope.pageData.srcCurrency = $scope.pageData.srcCountry.countryCurrency;
+            $scope.pageData.destCurrency = $scope.pageData.desCountry.countryCurrency;
             $location.path("/priceList/" + JSON.stringify($scope.pageData));
         };
 
@@ -34,8 +34,12 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
 
     $scope.comparePriceFromPriceList = function () {
 
-        $scope.showPricepageData.srcCurrency = $scope.showPricepageData.countryCurrency;
-        $scope.showPricepageData.destCurrency = $scope.showPricepageData.countryCurrency;
+        $scope.showPricepageData.srcCurrency = $scope.showPricepageData.srcCountry.countryCurrency;
+        $scope.showPricepageData.destCurrency = $scope.showPricepageData.desCountry.countryCurrency;
+
+        delete $scope.showPricepageData.providerList;
+        delete $scope.showPricepageData.currentPrice;
+
         $location.path("/priceList/" + JSON.stringify($scope.showPricepageData));
     };
 

@@ -74,6 +74,7 @@
 </section>
 
 <section id="currency-sec">
+    {{showPricepageData}}
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -136,7 +137,7 @@
                         <label for="inlineFormInputGroup">To</label>
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon currency-addon to-add">
-                                <input type="text" class="form-control currency-amount" size="10" ng-model="pageData.destCurrency" ng-value="showPricepageData.desCountry.countryCurrency" ng-disabled="true">
+                                <input type="text" class="form-control currency-amount" size="10" ng-model="showPricepageData.destCurrency" ng-value="showPricepageData.desCountry.countryCurrency" ng-disabled="true">
                             </div>
                         </div>
                     </form>
