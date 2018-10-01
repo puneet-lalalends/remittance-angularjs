@@ -122,7 +122,7 @@
                     <form>
                         <label for="inlineFormInputGroup">How Much?</label>
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <input type="text" class="form-control currency-amount" id="inlineFormInputGroup" placeholder="0.00" size="8" ng-model="showPricepageData.amountSend">
+                            <input type="text" class="form-control currency-amount" id="inlineFormInputGroup" placeholder="0.00" size="8" ng-model="showPricepageData.amountSend" numbers-only>
                             <div class="input-group-addon currency-addon">
                                 <input type="text" class="form-control currency-amount" size="2" ng-model="showPricepageData.srcCurrency" ng-value="showPricepageData.srcCountry.countryCurrency" ng-disabled="true">
                             </div>
