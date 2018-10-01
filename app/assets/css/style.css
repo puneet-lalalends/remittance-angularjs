@@ -1588,9 +1588,20 @@ text-align: center;padding: 70px 0px;}
 }
 
 .currency-amount {
-    text-align: left; 
     padding-top: 8px;
-    padding-bottom: 8px; 
+    padding-bottom: 8px;
+	text-align: center;
+	border: none;
+	border-radius: 0;
+	border-left: solid 1px #d9dada;
+}
+
+.currency-addon.to-add>.currency-amount{text-align: left;}
+
+.howMuch{
+	border: solid 1px #ced4da;
+	border-right: none;
+	border-radius: 4px 0 0 4px;
 }
 
 .currency-addon { 
@@ -6769,6 +6780,7 @@ button.btn-white:hover {
 	padding: 0;
 	min-width: 100% !important;
 	padding-left: 0 !important;
+	background: transparent !important;
 }
 
 .select2-search input{
@@ -6796,6 +6808,8 @@ button.btn-white:hover {
 
 .select2-arrow.ui-select-toggle{
 	padding: 8px 0;
+	background: transparent !important;
+	border: none !important;
 }
 
 .transRight{
