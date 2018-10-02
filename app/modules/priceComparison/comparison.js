@@ -14,23 +14,19 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
 
         $routeProvider.when('/privacy', {
             templateUrl: 'modules/priceComparison/privacyPolicy.html',
-            controller: 'ShowPriceCtrl'
+            controller: 'StaticDateCtrl'
         });
 
         $routeProvider.when('/terms', {
             templateUrl: 'modules/priceComparison/terms.html',
-            controller: 'ShowPriceCtrl'
+            controller: 'StaticDateCtrl'
         });
 
         $routeProvider.when('/faq', {
             templateUrl: 'modules/priceComparison/faq.html',
-            controller: 'ShowPriceCtrl'
+            controller: 'StaticDateCtrl'
         });
 
-        $routeProvider.when('/howItworks', {
-            templateUrl: 'modules/priceComparison/howItworks.html',
-            controller: 'ShowPriceCtrl'
-        });
     }])
 
     .controller('PriceComparisonCtrl', ['GENERAL_CONFIG', 'PriceComparisonService', '$scope', '$location', '$routeParams', function (GENERAL_CONFIG, PriceComparisonService, $scope, $location, $routeParams) {
@@ -49,7 +45,7 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
 
     }]).controller('ShowPriceCtrl', ['GENERAL_CONFIG', 'PriceComparisonService', '$scope', '$location', '$routeParams', function (GENERAL_CONFIG, PriceComparisonService, $scope, $location, $routeParams) {
 
-    $scope.showPricepageData = {providerList: [],currentPrice:""};
+    $scope.showPricepageData = {providerList: [], currentPrice: ""};
 
     $scope.comparePriceFromPriceList = function () {
 
@@ -99,16 +95,28 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
         };
         $scope.fetchProviders(dataParamForProviders);
 
-        var dataParamForCurrentPrice =  {
-            "sourceCountryCurrency":$scope.showPricepageData.srcCountry.countryCurrency,
-            "targetCountryCurrency":$scope.showPricepageData.desCountry.countryCurrency
+        var dataParamForCurrentPrice = {
+            "sourceCountryCurrency": $scope.showPricepageData.srcCountry.countryCurrency,
+            "targetCountryCurrency": $scope.showPricepageData.desCountry.countryCurrency
         };
 
         $scope.fetchCurrentPrice(dataParamForCurrentPrice);
     }
-}])
+}]).controller('StaticDateCtrl', ['GENERAL_CONFIG', '$scope', '$location', function (GENERAL_CONFIG, $scope, $location) {
 
-    .service('PriceComparisonService', ['GENERAL_CONFIG', '$http', '$q', function (GENERAL_CONFIG, $http, $q) {
+    $scope.faq = function () {
+        $location.path("/faq");
+    };
+
+    $scope.privacyPolicy = function () {
+        $location.path("/privacy");
+    };
+
+    $scope.logo = function () {
+        $location.path("/priceComparison");
+    };
+}])
+    .service('PriceComparisonService', ['GENERAL_CONFIG', '$http', '$q','$location', function (GENERAL_CONFIG, $http, $q,$location) {
 
         this.fetchProvidesFunc = function (dataParam) {
 
@@ -148,7 +156,7 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
 
     }]).filter('getDays', function () {
 
-        return function (input) {
+    return function (input) {
 
         var transferDate = new Date(input);
         var currentDate = new Date();
@@ -157,7 +165,7 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
     };
 }).filter('whatIsSent', function () {
 
-    return function (amountSend,transferFees) {
+    return function (amountSend, transferFees) {
 
         return parseFloat(amountSend) - parseFloat(transferFees);
     };

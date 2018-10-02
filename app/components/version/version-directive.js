@@ -2,11 +2,11 @@
 
 angular.module('myApp.version.version-directive', [])
 
-.directive('appVersion', ['version', function(version) {
-  return function(scope, elm, attrs) {
-    elm.text(version);
-  };
-}]).directive('numbersOnly', function () {
+    .directive('appVersion', ['version', function (version) {
+        return function (scope, elm, attrs) {
+            elm.text(version);
+        };
+    }]).directive('numbersOnly', function () {
     return {
         require: 'ngModel',
         link: function (scope, element, attr, ngModelCtrl) {
@@ -22,7 +22,21 @@ angular.module('myApp.version.version-directive', [])
                 }
                 return undefined;
             }
+
             ngModelCtrl.$parsers.push(fromUser);
+        }
+    };
+}).directive('hideon', function ($location) {
+    return {
+        transclude: true,
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+
+            if ($location.path() !== "/priceComparison") {
+                element.hide();
+            } else {
+                element.show();
+            }
         }
     };
 });
