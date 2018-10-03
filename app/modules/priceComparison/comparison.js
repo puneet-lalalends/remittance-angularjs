@@ -122,6 +122,46 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
         $location.path("/priceComparison");
     };
 
+    /*$scope.changeTab = function(){
+            // if the one you clicked is open,
+            if ($(this).find('p').hasClass('open')) {
+                // then close it.
+                $('.hideSeekTab .open').slideToggle().removeClass('open');
+                $('.iconBox').removeClass('closed');
+                // otherwise,
+            } else {
+                // close all tabs,
+                $('.hideSeekTab .open').slideToggle().removeClass('open');
+                // and open the one you clicked
+                $('.iconBox').removeClass('closed');
+                $(this).find('p').slideToggle().addClass('open');
+                $(this).find('.iconBox').addClass('closed');
+            }
+    };
+    */
+
+    angular.element(document).ready(function () {
+        $(function() {
+            // when a tab is clicked
+            $('.hideSeekTab').on('click', function() {
+                // if the one you clicked is open,
+                if ($(this).find('p').hasClass('open')) {
+                    // then close it.
+                    $('.hideSeekTab .open').slideToggle().removeClass('open');
+                    $('.iconBox').removeClass('closed');
+                    // otherwise,
+                } else {
+                    // close all tabs,
+                    $('.hideSeekTab .open').slideToggle().removeClass('open');
+                    // and open the one you clicked
+                    $(this).find('p').slideToggle().addClass('open');
+                    $('.iconBox').removeClass('closed');
+                    $(this).find('.iconBox').addClass('closed');
+                }
+            });
+        });
+    });
+
 }])
     .service('PriceComparisonService', ['GENERAL_CONFIG', '$http', '$q','$location', function (GENERAL_CONFIG, $http, $q,$location) {
 
