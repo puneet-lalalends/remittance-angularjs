@@ -14,8 +14,6 @@ angular.module('myApp', [
     $locationProvider.hashPrefix('');
 
     angular.element(document).ready(function () {
-        $(".my-select").chosen();
-
         $(function() {
             // when a tab is clicked
             $('.hideSeekTab').on('click', function() {
@@ -35,7 +33,6 @@ angular.module('myApp', [
                 }
             });
         });
-
     });
 
     $routeProvider.otherwise({redirectTo: '/priceComparison'});

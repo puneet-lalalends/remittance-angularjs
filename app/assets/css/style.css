@@ -6839,6 +6839,7 @@ button.btn-white:hover {
 }
 
 .inner-page p{font-size: 13px;margin-bottom: 8px;}
+.inner-page a{color: #007bff !important;}
 .inner-page h2{font-size: 20px;}
 .inner-page h3{font-size: 18px;}
 .inner-page ul li{font-size: 13px;

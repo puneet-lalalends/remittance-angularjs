@@ -104,6 +104,8 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
     }
 }]).controller('StaticDateCtrl', ['GENERAL_CONFIG', '$scope', '$location', function (GENERAL_CONFIG, $scope, $location) {
 
+    document.documentElement.scrollTop = 0;
+
     $scope.faq = function () {
         $location.path("/faq");
     };
@@ -112,9 +114,15 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
         $location.path("/privacy");
     };
 
+    $scope.termsAndCondition = function () {
+        $location.path("/terms");
+    };
+
     $scope.logo = function () {
         $location.path("/priceComparison");
     };
+
+
 }])
     .service('PriceComparisonService', ['GENERAL_CONFIG', '$http', '$q','$location', function (GENERAL_CONFIG, $http, $q,$location) {
 
