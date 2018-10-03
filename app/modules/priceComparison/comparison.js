@@ -122,7 +122,6 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
         $location.path("/priceComparison");
     };
 
-
 }])
     .service('PriceComparisonService', ['GENERAL_CONFIG', '$http', '$q','$location', function (GENERAL_CONFIG, $http, $q,$location) {
 
