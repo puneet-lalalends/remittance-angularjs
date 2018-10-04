@@ -115,9 +115,25 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
 
         $scope.fetchCurrentPrice(dataParamForCurrentPrice);
     }
-}]).controller('StaticDateCtrl', ['GENERAL_CONFIG', '$scope', '$location', function (GENERAL_CONFIG, $scope, $location) {
+}]).controller('StaticDateCtrl', ['GENERAL_CONFIG', '$scope', '$location','$anchorScroll', function (GENERAL_CONFIG, $scope, $location,$anchorScroll) {
 
     document.documentElement.scrollTop = 0;
+
+    $scope.gotoAboutUS = function() {
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash('about');
+        // call $anchorScroll()
+        $anchorScroll();
+    };
+
+    $scope.gotoWhoWeAre = function() {
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash('how_it_work');
+        // call $anchorScroll()
+        $anchorScroll();
+    };
 
     $scope.faq = function () {
         $location.path("/faq");
