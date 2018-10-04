@@ -45,9 +45,12 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
 
     }]).controller('ShowPriceCtrl', ['GENERAL_CONFIG', 'PriceComparisonService', '$scope', '$location', '$routeParams', function (GENERAL_CONFIG, PriceComparisonService, $scope, $location, $routeParams) {
 
-    $scope.showPricepageData = {providerList: [], currentPrice: ""};
+    $scope.showPricepageData = {providerList: [], currentPrice: "",showLoader:false};
 
     $scope.comparePriceFromPriceList = function () {
+
+        var providerList = $scope.showPricepageData.providerList;
+        var currentPrice = $scope.showPricepageData.currentPrice;
 
         $scope.showPricepageData.srcCurrency = $scope.showPricepageData.srcCountry.countryCurrency;
         $scope.showPricepageData.destCurrency = $scope.showPricepageData.desCountry.countryCurrency;
@@ -56,14 +59,20 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
         delete $scope.showPricepageData.currentPrice;
 
         $location.path("/priceList/" + JSON.stringify($scope.showPricepageData));
+
+        $scope.showPricepageData.providerList = providerList;
+        $scope.showPricepageData.currentPrice = currentPrice;
     };
 
     $scope.fetchProviders = function (dataParam) {
+
+        $scope.showPricepageData.showLoader = true;
 
         var promise = PriceComparisonService.fetchProvidesFunc(dataParam);
         promise.then(
             function (answer) {
                 $scope.showPricepageData.providerList = answer.payload;
+                $scope.showPricepageData.showLoader = false;
             },
             function (error) {
             },
@@ -73,10 +82,13 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
 
     $scope.fetchCurrentPrice = function (dataParam) {
 
+        $scope.showPricepageData.showLoader = true;
+
         var promise = PriceComparisonService.fetchCurrentPriceFunc(dataParam);
         promise.then(
             function (answer) {
                 $scope.showPricepageData.currentPrice = answer.payload.currencyRate;
+                $scope.showPricepageData.showLoader = false;
             },
             function (error) {
             },
@@ -85,6 +97,7 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
     };
 
     if ($routeParams.reqParam) {
+
         $scope.showPricepageData = $.extend($scope.showPricepageData, JSON.parse($routeParams.reqParam));
         var dataParamForProviders = {
             "sendingAmount": $scope.showPricepageData.amountSend + "",

@@ -681,7 +681,7 @@ button:focus {
 	animation-delay: 0.8s
 }
 .btn.btn-lg {
-	padding: 0 40px;
+	padding: 0 20px;
 }
 @keyframes rounded {
 0%
@@ -821,10 +821,6 @@ button:focus {
 	vertical-align: middle;
 }
 .btn i.fa {
-	font-size: 16px;
-	margin-left: 0;
-	margin-right: 10px;
-	margin-top: -2px;
 	padding: 0;
 }
 .btn-primary {
@@ -6939,7 +6935,29 @@ p.text.open {
 	display: block;
 }
 
+.loader {
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid #3498db;
+	width: 120px;
+	height: 120px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+	margin: 0 auto;
+	vertical-align:middle;
+	/*margin-top:125px;*/
+}
 
+/* Safari */
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
 /*===================================*
 26. END TOKEN NOTIFICATION POPUP
 *====================================*/
