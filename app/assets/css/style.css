@@ -1097,7 +1097,7 @@ header {
 .nav-fixed,
 header.active,
 .spop {
-	background-color: #1172c5;
+	background-color: #1478c5;
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 header.nav-fixed {
@@ -1657,7 +1657,7 @@ text-align: center;padding: 70px 0px;}
 	margin-right:10px;
 }
 .social_icon li a i {
-	background-color: #ffffff;
+	background-color: #b6bcbd;
 	border-radius: 20%; 
 	display: block;
 	height: 30px;
@@ -5342,8 +5342,8 @@ text-align: center;padding: 70px 0px;}
 16. START TIPS SECTION
 *===================================*/
 
-.txt-btm{display:flex;    
-    align-items:flex-end;}
+.txt-btm{display: flex;
+    align-items: center;}
 
 #tips_section{padding-top: 0px;
     padding-bottom: 0px; margin-bottom: 8em;} 
@@ -6759,9 +6759,16 @@ address{font-size: 13px;}
     height: 20px;
     width: 20px;
 }
+.img-inner1{
+	background-image:url(../images/how/choose_from_listing.png);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
 .homeSection{
-	background-image: url(../images/dummy_banner.png);
+	background-image: url(../images/banner/landing_banner_img.png);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -6769,19 +6776,14 @@ address{font-size: 13px;}
 }
 
 .tips_section{
-	background-image: url(../images/footer-bg.png);
-	background-attachment: fixed;
-	background-position: center;
+	background-image: url(../images/how/tipstotransfer_bg.png);
+	background-size: 100% 125vh;
 	background-repeat: no-repeat;
-	background-size: cover;
 }
 
 .priceSection{
-	background-image: url(../images/inner-banner.png);
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-image: url(../images/banner/inner_banner.png);
+	background-size: 100% 100%;
 }
 
 .originInput{
