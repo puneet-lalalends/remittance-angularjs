@@ -43,7 +43,7 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
             $location.path("/priceList/" + JSON.stringify($scope.pageData));
         };
 
-    }]).controller('ShowPriceCtrl', ['GENERAL_CONFIG', 'PriceComparisonService', '$scope', '$location', '$routeParams', function (GENERAL_CONFIG, PriceComparisonService, $scope, $location, $routeParams) {
+    }]).controller('ShowPriceCtrl', ['GENERAL_CONFIG', 'PriceComparisonService', '$scope', '$location', '$routeParams','$window', function (GENERAL_CONFIG, PriceComparisonService, $scope, $location, $routeParams,$window) {
 
     $scope.showPricepageData = {providerList: [], currentPrice: "",showLoader:false};
 
@@ -94,6 +94,18 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
             },
             function (progress) {
             });
+    };
+
+    $scope.goToPartner = function (partner) {
+
+        if(partner == "transferwise"){
+            $window.open("https://transferwise.com/?targetCurrency="+$scope.showPricepageData.srcCountry.countryCurrency+"&sourceCurrency="+$scope.showPricepageData.desCountry.countryCurrency+"&sourceAmount="+$scope.showPricepageData.amountSend);
+        }else if(partner == "transfergo"){
+            $window.open("http://try.transfergo.com/en_monito/?countryFrom="+$scope.showPricepageData.srcCountry.countryCode+"&countryTo="+$scope.showPricepageData.desCountry.countryCode+"&amountFrom="+$scope.showPricepageData.amountSend);
+        }else if(partner == "instarem"){
+            $window.open("https://www.instarem.com/en-in/");
+        }
+
     };
 
     if ($routeParams.reqParam) {
