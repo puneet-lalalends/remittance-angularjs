@@ -372,45 +372,7 @@ Version      : 1.6
         });
     });
 	
-	/*===================================*
-	 09. VIDEO JS
-	*===================================*/
-	$('.video').magnificPopup({
-		type: 'iframe'
-	});
 
-	/*===================================*
-	10. CONTACT FORM JS
-	*===================================*/
-	$("#submitButton").on("click", function(event) {
-	    event.preventDefault();
-	    var mydata = $("form").serialize();
-	    $.ajax({
-	        type: "POST",
-	        dataType: "json",
-	        url: "contact.php",
-	        data: mydata,
-	        success: function(data) {
-	            if (data.type === "error") {
-	                $("#alert-msg").removeClass("alert-msg-success");
-	                $("#alert-msg").addClass("alert-msg-failure");
-	            } else {
-	                $("#alert-msg").addClass("alert-msg-success");
-	                $("#alert-msg").removeClass("alert-msg-failure");
-	                $("#first-name").val("Enter Name");
-	                $("#email").val("Enter Email");
-	                $("#subject").val("Enter Subject");
-	                $("#description").val("Enter Message");
-
-	            }
-	            $("#alert-msg").html(data.msg);
-	            $("#alert-msg").show();
-	        },
-	        error: function(xhr, textStatus) {
-	            alert(textStatus);
-	        }
-	    });
-	});
 	
 	/*===================================*
 	11. SCROLLUP JS
@@ -431,15 +393,7 @@ Version      : 1.6
 		return false;
 	});
 	
-	/*===================================*
-	12. POPUP JS
-	*===================================*/
-	$('.content-popup').magnificPopup({
-		type: 'inline',
-		preloader: true,
-		mainClass: 'mfp-zoom'
-	});
-	
+
 	/*===================================*
 	13. ANIMATION JS
 	*===================================*/
@@ -475,70 +429,9 @@ Version      : 1.6
 	
 	});
 	
-	/*===================================*
-	14. START COUNTUP JS
-	*===================================*/
-	jQuery(document).ready(function($) {
-		jQuery('.counter').counterUp({
-			delay: 10,
-			time: 1000
-		});
-	});
 
-	/*===================================*
-	15. COLOR SWITCHHER JS
-	*===================================*/
-	$(".color-switch").on("click", "button", function() {
+
 	
-		$(this).addClass("active").siblings().removeClass("active");
-		$("#layoutstyle").attr("href", "assets/color/" + $(this).val() + ".css");
 	
-	});
-	
-	$(".icon").on("click", function() {
-		$(".color-switch").toggleClass("switch-active");
-		$(this).toggleClass("switch-active");
-	});
-	
-	$(function() {
-		$('#doc_select').change(function(){
-			$('.document_tab .tab-pane').removeClass('show active');
-			$('#' + $(this).val()).addClass('show active');
-		});
-	});
-	
-	google.maps.event.addDomListener(window, 'load', init);
-        
-            function init() {
-                // Basic options for a simple Google Map
-                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-                var mapOptions = {
-                    // How zoomed in you want the map to start at (always required)
-                    zoom: 12,
-
-                    // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(40.7020, -73.9220), // New York
-
-                    // How you would like to style the map. 
-                    // This is where you would paste any style found on Snazzy Maps.
-                   styles:[{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}]};
-
-                // Get the HTML DOM element that will contain your map 
-                // We are using a div with id="map" seen below in the <body>
-                var mapElement = document.getElementById('map');
-
-                // Create the Google Map using our element and options defined above
-                var map = new google.maps.Map(mapElement, mapOptions);
-
-                // Let's also add a marker while we're at it
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(40.7020, -73.9220),
-                    map: map,
-					icon: "assets/images/marker.png",
-                    title: 'Snazzy!'
-                });
-            }	
-			
-					
 })(jQuery);
 

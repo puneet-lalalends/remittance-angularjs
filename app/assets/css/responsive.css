@@ -1,19 +1,27 @@
 /* -------------------------------------------------
   min-width: 1200px
 ---------------------------------------------------*/
+@media (min-width:1380px){
+
+.tips_section{background-size: 100% 102vh;}
+
+}
 @media (min-width:1200px){
 .container{
 	max-width:1170px
 }
+
 .banner_image_right_big {
 	min-width: 700px;
 }	
 }
 
+
 /* -------------------------------------------------
   min-width: 991px and max-width: 1199px
 ---------------------------------------------------*/
 @media only screen and (min-width: 991px) and (max-width: 1199px) {
+	.tips_section{background-size: 100% 41vh;}
 .banner_text h1,
 .banner_text_s2 h1 {
 	font-size: 2.2rem;
