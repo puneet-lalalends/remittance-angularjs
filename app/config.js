@@ -6,7 +6,7 @@ var config_data = {
     'GENERAL_CONFIG': {
         'APP_NAME': 'REMITTANCE',
         'APP_VERSION': '0.1',
-        'REMITTANCE_URL': 'http://localhost:8080/'
+        'REMITTANCE_URL': 'http://13.232.255.216:8080/remittance/'
     }
 };
 
