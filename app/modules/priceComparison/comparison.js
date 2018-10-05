@@ -43,11 +43,14 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
             $location.path("/priceList/" + JSON.stringify($scope.pageData));
         };
 
-    }]).controller('ShowPriceCtrl', ['GENERAL_CONFIG', 'PriceComparisonService', '$scope', '$location', '$routeParams', function (GENERAL_CONFIG, PriceComparisonService, $scope, $location, $routeParams) {
+    }]).controller('ShowPriceCtrl', ['GENERAL_CONFIG', 'PriceComparisonService', '$scope', '$location', '$routeParams','$window', function (GENERAL_CONFIG, PriceComparisonService, $scope, $location, $routeParams,$window) {
 
-    $scope.showPricepageData = {providerList: [], currentPrice: ""};
+    $scope.showPricepageData = {providerList: [], currentPrice: "",showLoader:false};
 
     $scope.comparePriceFromPriceList = function () {
+
+        var providerList = $scope.showPricepageData.providerList;
+        var currentPrice = $scope.showPricepageData.currentPrice;
 
         $scope.showPricepageData.srcCurrency = $scope.showPricepageData.srcCountry.countryCurrency;
         $scope.showPricepageData.destCurrency = $scope.showPricepageData.desCountry.countryCurrency;
@@ -56,14 +59,20 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
         delete $scope.showPricepageData.currentPrice;
 
         $location.path("/priceList/" + JSON.stringify($scope.showPricepageData));
+
+        $scope.showPricepageData.providerList = providerList;
+        $scope.showPricepageData.currentPrice = currentPrice;
     };
 
     $scope.fetchProviders = function (dataParam) {
+
+        $scope.showPricepageData.showLoader = true;
 
         var promise = PriceComparisonService.fetchProvidesFunc(dataParam);
         promise.then(
             function (answer) {
                 $scope.showPricepageData.providerList = answer.payload;
+                $scope.showPricepageData.showLoader = false;
             },
             function (error) {
             },
@@ -73,10 +82,13 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
 
     $scope.fetchCurrentPrice = function (dataParam) {
 
+        $scope.showPricepageData.showLoader = true;
+
         var promise = PriceComparisonService.fetchCurrentPriceFunc(dataParam);
         promise.then(
             function (answer) {
                 $scope.showPricepageData.currentPrice = answer.payload.currencyRate;
+                $scope.showPricepageData.showLoader = false;
             },
             function (error) {
             },
@@ -84,7 +96,20 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
             });
     };
 
+    $scope.goToPartner = function (partner) {
+
+        if(partner == "transferwise"){
+            $window.open("https://transferwise.com/?targetCurrency="+$scope.showPricepageData.srcCountry.countryCurrency+"&sourceCurrency="+$scope.showPricepageData.desCountry.countryCurrency+"&sourceAmount="+$scope.showPricepageData.amountSend);
+        }else if(partner == "transfergo"){
+            $window.open("http://try.transfergo.com/en_monito/?countryFrom="+$scope.showPricepageData.srcCountry.countryCode+"&countryTo="+$scope.showPricepageData.desCountry.countryCode+"&amountFrom="+$scope.showPricepageData.amountSend);
+        }else if(partner == "instarem"){
+            $window.open("https://www.instarem.com/en-in/");
+        }
+
+    };
+
     if ($routeParams.reqParam) {
+
         $scope.showPricepageData = $.extend($scope.showPricepageData, JSON.parse($routeParams.reqParam));
         var dataParamForProviders = {
             "sendingAmount": $scope.showPricepageData.amountSend + "",
@@ -102,9 +127,25 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
 
         $scope.fetchCurrentPrice(dataParamForCurrentPrice);
     }
-}]).controller('StaticDateCtrl', ['GENERAL_CONFIG', '$scope', '$location', function (GENERAL_CONFIG, $scope, $location) {
+}]).controller('StaticDateCtrl', ['GENERAL_CONFIG', '$scope', '$location','$anchorScroll', function (GENERAL_CONFIG, $scope, $location,$anchorScroll) {
 
     document.documentElement.scrollTop = 0;
+
+    $scope.gotoAboutUS = function() {
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash('about');
+        // call $anchorScroll()
+        $anchorScroll();
+    };
+
+    $scope.gotoWhoWeAre = function() {
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash('how_it_work');
+        // call $anchorScroll()
+        $anchorScroll();
+    };
 
     $scope.faq = function () {
         $location.path("/faq");

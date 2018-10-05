@@ -1,7 +1,6 @@
 <div ng-include="'modules/priceComparison/loader.html'"></div>
 
 <div ng-include="'modules/priceComparison/header.html'"></div>
-
 <!-- START SECTION BANNER -->
 <section id="home_section" class="i-section_banner priceSection" data-z-index="1" data-parallax="scroll">
     <div class="container">
@@ -80,7 +79,7 @@
             <div class="col-lg-3">
                 <div class="">
                     <form>
-                        <label for="inlineFormInputGroup">How Much?</label>
+                        <label for="inlineFormInputGroup">Amount</label>
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <input type="text" class="form-control currency-amount howMuch" id="inlineFormInputGroup" placeholder="0.00" size="8" ng-model="showPricepageData.amountSend" numbers-only>
                             <div class="input-group-addon currency-addon">
@@ -103,12 +102,11 @@
                 </div>
             </div>
             <div class="col-lg-2">
-                <button type="type" class="btn btn-lg btn-primary-soft" ng-click="comparePriceFromPriceList()">Compare</button>
+                <button type="type" class="btn btn-lg btn-primary-soft" ng-click="comparePriceFromPriceList()">Compare  <i ng-if="showPricepageData.showLoader"  class="fa fa-spinner fa-spin" style="font-size:24px"></i></button>
             </div>
         </div>
     </div>
 </section>
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -137,13 +135,13 @@
                         <div class="img-trans col-md-6">
                             <img ng-src="{{'../../assets/partnersImages/'+provider.partnerName+'.png'}}">
                         </div>
-                        <div class="con-trans col-md-6 transRight" ng-click="provider.showDetails=!provider.showDetails">
+                        <div class="con-trans col-md-6 transRight" data-toggle="tooltip" title="See cost breakdown" ng-click="provider.showDetails=!provider.showDetails">
                             <h5>TOTAL COST</h5>
                             <h4>{{provider.transferFees}} {{showPricepageData.srcCountry.countryCurrency}}</h4>
                             <p class="tbor">Exchange Rate: <span>{{provider.exchangeRate}} <!--(+0.01%)--> </span></p>
                             <p>Fees: <span>{{provider.transferFees}} {{showPricepageData.srcCountry.countryCurrency}}</span></p>
                             <i class="fa fa-info-circle faCircle faCircleIcon"></i>
-                            <span class="faCircle1 faCircleText">Your Sample Text</span>
+                            <h6 class="faCircle1 faCircleText">Your Sample Text</h6>
                         </div>
                     </div>
                     <div class="col-md-3 tans-table">
@@ -163,7 +161,7 @@
                         </table>
                     </div>
                     <div class="col-md-3">
-                        <a href="#" class="btn-block btn-go">GO TO <br />{{provider.partnerName|uppercase}}</a>
+                        <a href="#" class="btn-block btn-go" ng-click="goToPartner(provider.partnerName)">GO TO <br />{{provider.partnerName|uppercase}}</a>
                     </div>
                 </div>
             </div>
@@ -224,9 +222,9 @@
                 <div class="row list-ul">
                     <div class="col-md-6">
                         <ul>
-                            <li><img src="../../assets/images/icon-1.png">{{provider.partnerInfoBo.licensedBy}}</li>
-                            <li><img src="../../assets/images/icon-2.png">{{provider.partnerInfoBo.basedIn}}</li>
-                            <li><img src="../../assets/images/icon-3.png">Available In
+                            <li ng-if="provider.partnerInfoBo.licensedBy"><img src="../../assets/images/icon-1.png">{{provider.partnerInfoBo.licensedBy}}</li>
+                            <li ng-if="provider.partnerInfoBo.basedIn"><img src="../../assets/images/icon-2.png">{{provider.partnerInfoBo.basedIn}}</li>
+                            <li ng-if="provider.partnerInfoBo.availableIn"><img src="../../assets/images/icon-3.png">Available In
                                 <span ng-repeat="availableIn in provider.partnerInfoBo.availableIn.split(',')">
                                   <img ng-src="../../assets/flags-mini/{{availableIn|lowercase}}.png" />
                                 </span>
@@ -234,11 +232,11 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <ul>
+                        <ul ng-if="provider.partnerInfoBo.dealIn">
                             <!--<li><img src="../../assets/images/icon-4.png">  Time to open an account A few minutes</li>-->
                             <li><img src="../../assets/images/icon-5.png"><span ng-bind-html="provider.partnerInfoBo.dealIn"></span></li>
                         </ul>
-                        <a href="#" class="">Review and Guide</a>
+                        <!--<a href="#" class="">Review and Guide</a>-->
                     </div>
                 </div>
                 <div class="row">
