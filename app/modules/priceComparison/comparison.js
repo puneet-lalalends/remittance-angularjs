@@ -165,6 +165,7 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
     };
 
     $scope.logo = function () {
+        document.documentElement.scrollTop = 0;
         $location.path("/priceComparison");
     };
 
