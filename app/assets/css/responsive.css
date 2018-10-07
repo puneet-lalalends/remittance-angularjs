@@ -1051,6 +1051,7 @@ section.small_pb {
   max-width: 640px
 ---------------------------------------------------*/
 @media only screen and (max-width: 640px) {
+	.menu-sty{width: 46%;}
 p,
 .footer_title {
 	margin-bottom: 15px;
