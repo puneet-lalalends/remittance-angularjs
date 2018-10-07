@@ -59,7 +59,7 @@
 	height: 25em;
 }
 }
-}
+
 /* -------------------------------------------------
   min-width: 991px and max-width: 1199px
 ---------------------------------------------------*/
@@ -356,6 +356,7 @@ section.small_pt {
   min-width: 991px
 ---------------------------------------------------*/
 @media only screen and (min-width: 991px) {
+
 .navbar-expand-lg .navbar-nav li:hover > .dropdown-menu {
 	display: block;
 }
@@ -401,6 +402,12 @@ section.small_pt {
   max-width: 991px
 ---------------------------------------------------*/
 @media only screen and (max-width: 991px) {
+	.faq .inner_bantext h1::before{display: none;}
+		#tips_section{margin-bottom: 0;    padding: auto !important;}
+		.tips-sec ul{ padding: 0 0 8em 1em;}
+		.banner_text p{font-size: 16px;}
+		.tips_section{background-size: cover; }
+	.menu-sty{top: 4em;width: 32%; background:#1478c5; border-radius: 5px; } 
 .h1, h1 {
 	font-size: 2rem;
 }
@@ -465,8 +472,8 @@ header.fixed-top {
 	animation-name: none;
 	border-right: 1px solid rgba(255,255,255,0.6);
 	float: left;
-	text-align: center;
-	width: 50%;
+	padding: 0.5em;
+	text-align: left;
 }
 .navbar-nav:last-child {
 	border:0;
@@ -747,6 +754,8 @@ header.nav-fixed {
   max-width: 767px
 ---------------------------------------------------*/
 @media only screen and (max-width: 767px) {
+
+	.w60{width: 50%;}
 section,
 .top_footer {
 	padding: 50px 0;
@@ -1553,6 +1562,11 @@ section.small_pb {
   max-width: 380px
 ---------------------------------------------------*/
 @media only screen and (max-width: 380px) {
+	.banner_text h1{font-size: 43px;}
+	.banner_text p {
+    font-size: 14px;
+}
+	.menu-sty {width: 50%;}
 .title_default_light h4, 
 .title_default_dark h4,
 .title_blue_dark h4,

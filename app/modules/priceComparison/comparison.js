@@ -26,7 +26,10 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
             templateUrl: 'modules/priceComparison/faq.html',
             controller: 'StaticDateCtrl'
         });
-
+        $routeProvider.when('/careers', {
+            templateUrl: 'modules/priceComparison/careers.html',
+            controller: 'StaticDateCtrl'
+        });
     }])
 
     .controller('PriceComparisonCtrl', ['GENERAL_CONFIG', 'PriceComparisonService', '$scope', '$location', '$routeParams', function (GENERAL_CONFIG, PriceComparisonService, $scope, $location, $routeParams) {
@@ -150,7 +153,9 @@ angular.module('myApp.priceComparison', ['ngRoute', 'myApp.config'])
     $scope.faq = function () {
         $location.path("/faq");
     };
-
+     $scope.careers = function () {
+        $location.path("/careers");
+    };
     $scope.privacyPolicy = function () {
         $location.path("/privacy");
     };
